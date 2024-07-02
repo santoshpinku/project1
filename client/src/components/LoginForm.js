@@ -1,31 +1,38 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import api from '../services/api';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-const LoginForm = () => {
-  const [email, setEmail] = useState('');
+function LoginForm() {
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const history = useHistory();
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await api.post('/login', { email, password });
-      localStorage.setItem('token', response.data.token);
-      history.push('/dashboard');
-    } catch (error) {
-      console.error('Login error:', error);
-      // Handle error (e.g., show error message)
+      await axios.post('http://localhost:5000/api/login', { username, password });
+      navigate('/dashboard');
+    } catch (err) {
+      setError('Login failed');
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
-      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+      <h2>Login</h2>
+      {error && <p>{error}</p>}
+      <label>
+        Username:
+        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+      </label>
+      <label>
+        Password:
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+      </label>
       <button type="submit">Login</button>
     </form>
   );
-};
+}
 
 export default LoginForm;
