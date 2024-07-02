@@ -39,7 +39,7 @@ function LoginForm() {
     <div className="App">
       <div className="form-container">
         <form onSubmit={handleSubmit}>
-          <h2>Login</h2>
+          <h2>Create An Account</h2>
           {error && <p className="error-message">{error}</p>}
           <label>
             Username:
@@ -53,7 +53,13 @@ function LoginForm() {
           <button type="button" onClick={handleSignupClick}>Signup</button>
         </form>
       </div>
-      {showSignup && <SignupPopup onSuccess={handleSignupSuccess} onClose={() => setShowSignup(false)} />}
+      {showSignup && (
+        <div className="signup-popup">
+          <div className="popup-content">
+            <SignupPopup onSuccess={handleSignupSuccess} onClose={() => setShowSignup(false)} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
