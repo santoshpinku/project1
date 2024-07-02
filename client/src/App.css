@@ -8,12 +8,24 @@
     align-items: center;
     font-family: Arial, sans-serif;
   }
-  
+  .error-message {
+    color: red;
+  }
+  /* App.css or your CSS file */
+.form-group {
+  margin-bottom: 10px; /* Adjust spacing between form groups */
+}
+
+.form-group label {
+  display: block; /* Ensure labels are displayed as blocks */
+  margin-bottom: 5px; /* Adjust spacing between label and input */
+}
+
   .form-container {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(234, 228, 228, 0.8);
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 1000px;
+    box-shadow: 0 0 10px rgba(213, 35, 35, 0.2);
   }
   /* App.css or your CSS file */
 .signup-popup {
@@ -38,3 +50,51 @@
   width: 100%;
   text-align: center;
 }
+
+
+/* App.css or your CSS file */
+.form-container {
+  max-width: 600px; /* Adjust maximum width as per your design */
+  margin: 0 auto; /* Center the form container */
+  padding: 100px;
+  background-color: #fff;
+  border-radius: 50px;
+  box-shadow: 0 0 10px rgba(177, 24, 24, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px; /* Adjust spacing between form groups */
+}
+
+.form-group label {
+  display: block; /* Ensure labels are displayed as blocks */
+  margin-bottom: 10px; /* Adjust spacing between label and input */
+}
+
+.form-group input {
+  width: 100%; /* Ensure inputs take full width of the form group */
+  padding: 8px; /* Adjust padding inside inputs */
+  border: 5px solid #ccc; /* Example border style */
+  border-radius: 4px;
+}
+
+.form-group button {
+  margin-top: 100px; /* Adjust spacing between buttons and form groups */
+  padding: 10px 20px; /* Adjust button padding */
+  background-color: #007bff; /* Example button color */
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red; /* Error message color */
+}
+.login-btn{
+  margin-right: 3px;
+}
+
+
+
+
